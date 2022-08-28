@@ -27,7 +27,8 @@ public class Fibo {
 	 * 
 	 * @param n : l'entier dont on veut calculer sa suite fibonnacci
 	 * @return entierList : une liste d'entier
-	 * @throws Exception 
+	 * @throws Exception : on renvoie une exception lorsqu'on
+	 *                    fournit un nombre négatif
 	 */
 	public static List<Integer> getFibonacciNumberAt(int n) throws Exception {
 
