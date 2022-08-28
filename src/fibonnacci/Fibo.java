@@ -12,7 +12,11 @@ public class Fibo {
 
 			int N = sc.nextInt();
 			List<Integer> entierList = new ArrayList<Integer>();
-			entierList = getFibonacciNumberAt(N);
+			try {
+				entierList = getFibonacciNumberAt(N);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 
 			System.out.print(entierList);
 
@@ -23,14 +27,18 @@ public class Fibo {
 	 * 
 	 * @param n : l'entier dont on veut calculer sa suite fibonnacci
 	 * @return entierList : une liste d'entier
+	 * @throws Exception 
 	 */
-	public static List<Integer> getFibonacciNumberAt(int n) {
+	public static List<Integer> getFibonacciNumberAt(int n) throws Exception {
 
 		List<Integer> entierList = new ArrayList<Integer>();
 		List<Integer> entierList1 = new ArrayList<Integer>();
 		List<Integer> entierList2 = new ArrayList<Integer>();
 
-		if (n == 0 || n == 1) {
+		if (n < 0) {
+			throw new Exception("Exception Message");
+		}
+		else if (n == 0 || n == 1) {
 			entierList.add(n);
 			return entierList;
 		} else {
